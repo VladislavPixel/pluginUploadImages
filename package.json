@@ -1,0 +1,22 @@
+{
+	"name": "downloadimages",
+	"version": "1.0.0",
+	"description": "custom download images",
+	"main": "index.js",
+	"scripts": {
+		"serve": "parcel index.html"
+	},
+	"keywords": [
+		"download",
+		"js",
+		"javascript",
+		"nodeJS",
+		"Node",
+		"images"
+	],
+	"author": "pixel.inc <pixel.develop@yandex.ru>",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel-bundler": "^1.12.5"
+	}
+}
