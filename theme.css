@@ -130,3 +130,16 @@ input[type=file]{
 	bottom: 0;
 	opacity: 1;
 }
+
+.preview-info-progress{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	transition: width .22s;
+	height: 25px;
+	background: #42b983;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

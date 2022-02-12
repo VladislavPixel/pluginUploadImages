@@ -16,9 +16,11 @@ function createElement(type, classes = [], content) {
 
 	return node
 }
+function noop() {}
 
 export function upload(selector, options = {}) {
 	let files = []
+	const onUpload = options.onUpload ? options.onUpload : noop
 	const input = document.querySelector(selector)
 	const preview = createElement("div", ["preview"])
 	const open = createElement("button", ["btn"], "Открыть")
@@ -43,7 +45,6 @@ export function upload(selector, options = {}) {
 		if (!target.files.length) return
 		upload.style.display = "inline-block"
 		files = Array.from(target.files)
-		console.log(files)
 
 		preview.innerHTML = ""
 		files.forEach(file => {
@@ -78,8 +79,16 @@ export function upload(selector, options = {}) {
 			}, 301)
 		}
 	}
+	function clearPreview(el) {
+		el.style.opacity = 1
+		el.style.bottom = 0
+		el.innerHTML = `<div class="preview-info-progress"></div>`
+	}
 	function uploadHandler() {
-
+		preview.querySelectorAll(".preview-remove").forEach(el => el.remove())
+		const previewInfo = preview.querySelectorAll(".preview-info")
+		previewInfo.forEach(item => clearPreview(item))
+		onUpload(files, previewInfo)
 	}
 	open.addEventListener("click", triggerInput)
 	input.addEventListener("change", changeHandler)

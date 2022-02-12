@@ -9,14 +9,21 @@
 	"keywords": [
 		"download",
 		"js",
+		"JS",
 		"javascript",
+		"JavaScript",
 		"nodeJS",
 		"Node",
-		"images"
+		"images",
+		"NodeJS",
+		"plugin"
 	],
 	"author": "pixel.inc <pixel.develop@yandex.ru>",
 	"license": "ISC",
 	"devDependencies": {
 		"parcel-bundler": "^1.12.5"
+	},
+	"dependencies": {
+		"firebase": "^9.6.6"
 	}
 }
